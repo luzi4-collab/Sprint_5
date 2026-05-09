@@ -1,11 +1,27 @@
 # Sprint_5
 
 # список файлов:
-# файл с фикстурами - conftest.py
+
+# conftest.py - файл с фикстурами
+
+# все тесты размещены в каталоге tests, список тестов по файлам:
+# test_registration_success.py - успешная регистрация
+# test_registration_falue.py - ошибка регистрации по причины неправильного пароля (пароль короче 6 символов)
+# test_login_to_personal_accoun_from_main_page_success.py - вход по кнопке "Войти в аккаунт" на главной
+# test_login_from_registration_form_success.py - вход по кнопке с формы регистрации
+# test_login_from_forgot_password_form_success.py - вход по кнопке с формы восстановления пароля
+# test_login_by_personal_account_button_success.py - вход по кнопке "Личный кабинет"
+# test_click_on_button_personal_account_logouted_success.py - переход по клику на "Личный кабинет", незалогиненный пользователь
+# test_click_on_button_personal_account_logined_success.py - переход по клику на "Личный кабинет", залогиненный пользователь
+# test_form_personal_account_page_by_constructor_button_success.py - переход из личного кабинета по клику на "Конструктор"
+# test_form_personal_account_page_by_logotype_button_success.py - переход из личного кабинета по клику на на логотип Stellar Burgers
+# test_logout_success.py - выход по кнопке "Выйти" в личном кабинете
+# test_click_on_rolls_button_success.py - переход к разделу "Булки"
+# test_click_on_sauces_button_success.py - переход к разделу "Соусы"
+# test_click_on_fillings_button_success.py - переход к разделу "Начинки"
 
 
- 
-# ФОРМЫ И ЛОКАТОРЫ по пунктам задания проекта
+# ФОРМЫ И ЛОКАТОРЫ
 
 
 # 1. Регистрация
@@ -28,306 +44,78 @@
 
 
 # 2. Вход
+# ссылка на https://stellarburgers.education-services.ru/login
 
-# 2.1. по кнопке "Войти в аккаунт" на главной
-# ссылка на форму: https://stellarburgers.education-services.ru/
-
-# 2.1.1. кнопка "Войти в аккаунт"
-# XPATH = ".//button[text()='Войти в аккаунт']"
-# переход на https://stellarburgers.education-services.ru/login
-
-# 2.1.2. поле ввода "Email"
+# 2.1. поле ввода "Email"
 # XPATH = ".//input[@name='name']"
 
-# 2.1.3. поле ввода "Пароль"
+# 2.2. поле ввода "Пароль"
 # XPATH = ".//input[@name='Пароль']"
 
-# 2.1.4. кнопка "Войти"
+# 2.3. кнопка "Войти"
 # XPATH = ".//button[text()='Войти']"
 
-# 2.2. через кнопку "Личный кабинет"
-# ссылки:
-#    https://stellarburgers.education-services.ru/
-#    https://stellarburgers.education-services.ru/register
-#    https://stellarburgers.education-services.ru/forgot-password
-
-# 2.2.1. кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# переход на https://stellarburgers.education-services.ru/login
-
-# 2.2.2. поле ввода "Email"
-# XPATH = ".//input[@name='name']"
-
-# 2.2.3. поле ввода "Пароль"
-# XPATH = ".//input[@name='Пароль']"
-
-# 2.2.4. кнопка "Войти"
-# XPATH = ".//button[text()='Войти']"
-
-# 2.3. по кнопке с формы регистрации
-# ссылка: https://stellarburgers.education-services.ru/login
-
-# 2.3.1. кнопка "Зарегистрироваться"
+# 2.4. кнопка "Зарегистрироваться"
 # XPATH = ".//a[text()='Зарегистрироваться']"
-# переход на https://stellarburgers.education-services.ru/register
 
-# 2.3.1.1. поле ввода "Имя"
-# XPATH = ".//fieldset[1]//input"
-
-# 2.3.1.2. поле ввода "Email"
-# XPATH = ".//fieldset[2]//input"
-
-# 2.3.1.3. поле ввода "Пароль"
-# XPATH = ".//input[@name='Пароль']"
-
-# 2.3.1.4. кнопка "Зарегистрироваться"
-# XPATH = ".//button[text()='Зарегистрироваться']"
-
-# 2.3.2. кнопка "Войти"
-# XPATH = ".//a[text()='Войти']"
-# переход на https://stellarburgers.education-services.ru/login
-
-# 2.4. по кнопку в форме восстановления пароля
-# ссылка: https://stellarburgers.education-services.ru/login
-
-# 2.4.1. кнопка "Восстановить пароль"
+# 2.5. кнопка "Восстановить пароль"
 # XPATH = ".//a[text()='Восстановить пароль']"
-# переход на https://stellarburgers.education-services.ru/forgot-password
 
-# 2.4.1.1. поле ввода "Email"
-# XPATH = ".//input[@name='name']"
+# 2.6. заголовок "Вход"
+# XPATH = ".//div/h2[text()='Вход']"
 
-# 2.4.1.2. кнопка "Восстановить"
-# XPATH = ".//button[text()='Восстановить']"
-
-# 2.4.2. кнопка "Войти"
-# XPATH = ".//a[text()='Войти']"
-# переход на https://stellarburgers.education-services.ru/login
+# 2.7. текст ошибки о некорректном пароле
+# XPATH = ".//p[text()='Некорректный пароль']"
 
 
-# 3. Переход в личный кабинет
-# ссылки:
-#    https://stellarburgers.education-services.ru/
-#    https://stellarburgers.education-services.ru/register
-#    https://stellarburgers.education-services.ru/forgot-password
+# 3. Личный кабинет
+# ссылка на форму: https://stellarburgers.education-services.ru/account/profile
 
-# 3.1. кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# переход на https://stellarburgers.education-services.ru/login
+# 3.1. кнопка "Выход"
+# XPATH = ".//div/nav/ul/li[3]/button"
 
-
-# 4. Переход из личного кабинета в Конструктор
-# ссылка: https://stellarburgers.education-services.ru/ ????? - уточнить
-
-# 4.1. "Конструктор"
+# 3.2. "Конструктор"
 # XPATH = ".//p[text()='Конструктор']" - верно для всех форм
 # переход на https://stellarburgers.education-services.ru/
 
-# 4.2. логотип Stellar Burgers
+# 3.3. логотип Stellar Burgers
 # XPATH = ".//div/a" - верно для всех форм
 # переход на https://stellarburgers.education-services.ru/
 
 
-# 5. Выход из аккаунта
-# ссылка:
-# кнопка "Выйти"
-
-
-# 6. Раздел "Конструктор"
-# ссылка: https://stellarburgers.education-services.ru/
-
-# 6.1. переход в "Булки"
-# XPATH = ".//span[text()='Булки']"
-# видимость блока с булкой XPATH = ".//div/main/section[1]/div[2]/ul[1]/a" 
-# или видимость заголовка блока "Булки" XPATH = ".//div/main/section[1]/div[2]/h2[1]"
-
-# 6.2. переход в "Соусы"
-# XPATH = ".//span[text()='Соусы']"
-# видимость блока с соусом XPATH = ".//div/main/section[1]/div[2]/ul[2]/a" 
-# или видимость заголовка блока "Соусы" XPATH = ".//div/main/section[1]/div[2]/h2[2]" + не видимость заголовка блока "Булки" XPATH = ".//div/main/section[1]/div[2]/h2[1]"
-
-# 6.3. переход в "Начинки"
-# XPATH = ".//span[text()='Начинки']"
-# видимость блока с начинкой XPATH = ".//div/main/section[1]/div[2]/ul[3]/a" 
-# или видимость заголовка блока "Начинки" XPATH = ".//div/main/section[1]/div[2]/h2[3]" + не видимость заголовков "Булки" и "Соусы" (XPATH = ".//div/main/section[1]/div[2]/h2[1]" и XPATH = ".//div/main/section[1]/div[2]/h2[2]")
-
-
-
-# РАСКЛАДКА ПО ФОРМАМ
-
-
-# 1. форма Регистрация
-# ссылка на форму: https://stellarburgers.education-services.ru/register
-
-# тест 1: Успешная регистрация
-
-# поле ввода "Имя" - валидное имя непустое: например, 1
-# XPATH = ".//fieldset[1]//input"
-# поле ввода "Email" - валидный email в формате логин@домен: например, 123@ya.ru
-# XPATH = ".//fieldset[2]//input"
-# поле ввода "Пароль" - валидный пароль не менее 6 символов: например, 123456
-# XPATH = ".//input[@name='Пароль']"
-# кнопка "Зарегистрироваться"
-# XPATH = ".//button[text()='Зарегистрироваться']"
-# Критерий прохождения: успешный переход на страницу входа (отображение элемента с XPATH = ".//div/h2[text()='Вход']") (ссылка: https://stellarburgers.education-services.ru/login)
-
-# тест 2: Ошибка некорректного пароля
-
-# поле ввода "Имя" - валидное имя непустое: например, 1
-# XPATH = ".//fieldset[1]//input"
-# поле ввода "Email" - валидный email в формате логин@домен: например, 123@ya.ru
-# XPATH = ".//fieldset[2]//input"
-# поле ввода "Пароль" - не валидный пароль менее 6 символов: например, 12345
-# XPATH = ".//input[@name='Пароль']"
-# кнопка "Зарегистрироваться"
-# XPATH = ".//button[text()='Зарегистрироваться']"
-# Критерий прохождения: появление ошибки для некорректного пароля 'Некорректный пароль' (XPATH - ".//p[text()='Некорректный пароль']")
-
-# тест 3: Переход ко Входу
-
-# кнопка "Войти"
-# XPATH = ".//a[text()='Войти']"
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/login
-
-# тест 4: Переход в ЛК по кнопке по кнопке "Личный кабинет"
-
-# кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# Критерий прохождения: успешный переход в ЛК или успешный переход на https://stellarburgers.education-services.ru/login
-
-
-# 2. форма Главная
+# 4. Главная
 # ссылка на форму: https://stellarburgers.education-services.ru
 
-# тест 1: Вход и переход ко Входу
-
-# тест 1.1: Переход ко Входу с Главной по кнопке "Войти в аккаунт"
-
-# кнопка "Войти в аккаунт"
+# 4.1. кнопка "Войти в аккаунт"
 # XPATH = ".//button[text()='Войти в аккаунт']"
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/login
 
-# тест 1.2: Переход ко Входу с Главной по кнопке "Личный кабинет"
-
-# кнопка "Личный Кабинет"
+# 4.2. кнопка "Личный Кабинет"
 # XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/login
 
-# тест 1.3: Переход в ЛК по кнопке по кнопке "Личный кабинет"
-
-# кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# Критерий прохождения: успешный переход в ЛК
-
-# тест 2: Переходы к разделам конструктора
-
-# тест 2.1: Переход в "Булки"
-
-# пункт "Булки"
+# 4.3. пункт "Булки"
 # XPATH = ".//span[text()='Булки']"
-# Критерий прохождения: видимость блока с булкой XPATH = ".//div/main/section[1]/div[2]/ul[1]/a" 
-# или видимость заголовка блока "Булки" XPATH = ".//div/main/section[1]/div[2]/h2[1]"
 
-# тест 2.2: Переход в "Соусы"
-
-# пункт "Соусы"
+# 4.4. пункт "Соусы"
 # XPATH = ".//span[text()='Соусы']"
-# Критерий прохождения: видимость блока с соусом XPATH = ".//div/main/section[1]/div[2]/ul[2]/a" 
-# или видимость заголовка блока "Соусы" XPATH = ".//div/main/section[1]/div[2]/h2[2]" + не видимость заголовка блока "Булки" XPATH = ".//div/main/section[1]/div[2]/h2[1]"
 
-# тест 2.3: Переход в "Начинки"
-
-# пункт "Начинки"
+# 4.5. пункт "Начинки"
 # XPATH = ".//span[text()='Начинки']"
-# Критерий прохождения: видимость блока с начинкой XPATH = ".//div/main/section[1]/div[2]/ul[3]/a" 
-# или видимость заголовка блока "Начинки" XPATH = ".//div/main/section[1]/div[2]/h2[3]" + не видимость заголовков "Булки" и "Соусы" (XPATH = ".//div/main/section[1]/div[2]/h2[1]" и XPATH = ".//div/main/section[1]/div[2]/h2[2]")
+
+# 4.6. кнопка "Оформить заказ"
+# XPATH = ".//button[text()='Оформить заказ']"
+
+# 4.7. заголовок "Булки"
+# XPATH = ".//div/main/section[1]/div[2]/h2[1]"
+
+# 4.8. заголовок "Соусы"
+# XPATH = ".//div/main/section[1]/div[2]/h2[2]"
+
+# 4.9. заголовок "Начинки"
+# XPATH = ".//div/main/section[1]/div[2]/h2[3]"
 
 
-# 3. форма Вход
-# ссылка на форму: https://stellarburgers.education-services.ru/login
-
-# тест 1: Успешный Вход
-
-# поле ввода "Email"
-# XPATH = ".//input[@name='name']"
-# поле ввода "Пароль"
-# XPATH = ".//input[@name='Пароль']"
-# кнопка "Войти"
-# XPATH = ".//button[text()='Войти']"
-# Критерий прохождения: успешная регистрация: нет ошибки, есть кнопка "Оформить заказ" (XPATH = ".//button[text()='Оформить заказ']")
-
-# тест 2: Переход в ЛК по кнопке по кнопке "Личный кабинет"
-
-# кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# Критерий прохождения: успешный переход в ЛК
-
-# тест 3: Переход к регистрации по кнопке  "Зарегистрироваться"
-
-# кнопка "Зарегистрироваться"
-# XPATH = ".//button[text()='Зарегистрироваться']"
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/register
-
-# тест 4: Переход к восстановлению пароля по кнопке "Восстановить пароль"
-
-# кнопка "Восстановить пароль"
-# XPATH = ".//a[text()='Восстановить пароль']"
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/forgot-password
-
-
-# 4. форма Восстановление пароля
+# 5. Восстановление пароля
 # ссылка на форму: https://stellarburgers.education-services.ru/forgot-password
 
-# тест 1: Переход ко Входу
-
-# кнопка "Войти"
+# 5.1. кнопка "Войти"
 # XPATH = ".//a[text()='Войти']"
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/login
-
-# тест 2: Переход в ЛК по кнопке по кнопке "Личный кабинет"
-
-# кнопка "Личный Кабинет"
-# XPATH = ".//p[text()='Личный Кабинет']" - верно для всех форм
-# Критерий прохождения: успешный переход в ЛК или успешный переход на https://stellarburgers.education-services.ru/login
-
-
-# 5. форма Личный кабинет (ЛК)
-# ссылка на форму: ?????
-
-# тест 1: Переход в Конструктор по кнопке Конструктор
-
-# кнопка "Конструктор"
-# XPATH = ".//p[text()='Конструктор']" - верно для всех форм
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/
-
-# тест 2: Переход в Конструктор по клику на логотип Stellar Burgers
-
-# логотип Stellar Burgers
-# XPATH = ".//div/a" - верно для всех форм
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/
-
-# тест 3: Выход
-
-# кнопка "Выйти"
-# XPATH = ???????
-# Критерий прохождения: успешный переход на https://stellarburgers.education-services.ru/
-
-
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 

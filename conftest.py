@@ -18,28 +18,24 @@ def random_element(max_chars):
 
 @pytest.fixture(scope='function')
 def main_page():
-    main_page = "https://stellarburgers.education-services.ru/"
-    return main_page
+    return "https://stellarburgers.education-services.ru/"
 
 @pytest.fixture(scope='function')
 def login_page():
-    login_page = "https://stellarburgers.education-services.ru/login"
-    return login_page
+    return "https://stellarburgers.education-services.ru/login"
 
 @pytest.fixture(scope='function')
 def register_page():
-    register_page = "https://stellarburgers.education-services.ru/register"
-    return register_page
+    return "https://stellarburgers.education-services.ru/register"
 
 @pytest.fixture(scope='function')
 def forgot_password_page():
-    forgot_password_page = "https://stellarburgers.education-services.ru/forgot-password"
-    return forgot_password_page
+    return "https://stellarburgers.education-services.ru/forgot-password"
 
 @pytest.fixture(scope='function')
 def personal_account_page():
-    personal_account_page = "https://stellarburgers.education-services.ru/account/profile"
-    return personal_account_page
+    return "https://stellarburgers.education-services.ru/account/profile"
+
 
 # фикстуры для логина, пароля, email
 
