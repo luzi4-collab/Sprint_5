@@ -4,21 +4,41 @@
 
 # conftest.py - файл с фикстурами
 
-# все тесты размещены в каталоге tests, список тестов по файлам:
-# test_registration_success.py - успешная регистрация
-# test_registration_falue.py - ошибка регистрации по причины неправильного пароля (пароль короче 6 символов)
-# test_login_to_personal_accoun_from_main_page_success.py - вход по кнопке "Войти в аккаунт" на главной
-# test_login_from_registration_form_success.py - вход по кнопке с формы регистрации
-# test_login_from_forgot_password_form_success.py - вход по кнопке с формы восстановления пароля
-# test_login_by_personal_account_button_success.py - вход по кнопке "Личный кабинет"
-# test_click_on_button_personal_account_logouted_success.py - переход по клику на "Личный кабинет", незалогиненный пользователь
-# test_click_on_button_personal_account_logined_success.py - переход по клику на "Личный кабинет", залогиненный пользователь
-# test_form_personal_account_page_by_constructor_button_success.py - переход из личного кабинета по клику на "Конструктор"
-# test_form_personal_account_page_by_logotype_button_success.py - переход из личного кабинета по клику на на логотип Stellar Burgers
-# test_logout_success.py - выход по кнопке "Выйти" в личном кабинете
+# все тесты и файлы с локаторами и хелперами размещены в каталоге tests, список тестов по файлам:
+# locators.py - файл с локаторами
+# helpers.py - файл с хелперами
+
+# тесты сгруппированы в файлы:
+
+# test_registration.py 
+# содержит тесты:
+# test_registration_success - успешная регистрация
+# test_registration_falue - ошибка регистрации по причины неправильного пароля (пароль короче 6 символов)
+
+# test_login.py
+# содержит тесты:
+# test_login_to_personal_accoun_from_main_page_success - вход по кнопке "Войти в аккаунт" на главной
+# test_login_from_registration_form_success - вход по кнопке с формы регистрации
+# test_login_from_forgot_password_form_success - вход по кнопке с формы восстановления пароля
+# test_login_by_personal_account_button_success - вход по кнопке "Личный кабинет"
+
+# test_click_on.py
+# содержит тесты:
+# test_click_on_button_personal_account_logouted_success - переход по клику на "Личный кабинет", незалогиненный пользователь
+# test_click_on_button_personal_account_logined_success - переход по клику на "Личный кабинет", залогиненный пользователь
 # test_click_on_rolls_button_success.py - переход к разделу "Булки"
 # test_click_on_sauces_button_success.py - переход к разделу "Соусы"
 # test_click_on_fillings_button_success.py - переход к разделу "Начинки"
+
+# test_form_personal_account.py
+# содержит тесты:
+# test_form_personal_account_page_by_constructor_button_success - переход из личного кабинета по клику на "Конструктор"
+# test_form_personal_account_page_by_logotype_button_success - переход из личного кабинета по клику на на логотип Stellar Burgers
+
+# test_logout_success.py
+# содержит тест:
+# test_logout_success.py - выход по кнопке "Выйти" в личном кабинете
+
 
 
 # ФОРМЫ И ЛОКАТОРЫ
@@ -42,6 +62,9 @@
 # 1.5. ошибка для некорректного пароля
 # XPATH - ".//p[text()='Некорректный пароль']"
 
+# 1.6. кнопка "Войти"
+# XPATH = ".//a[text()='Войти']"
+
 
 # 2. Вход
 # ссылка на https://stellarburgers.education-services.ru/login
@@ -63,9 +86,6 @@
 
 # 2.6. заголовок "Вход"
 # XPATH = ".//div/h2[text()='Вход']"
-
-# 2.7. текст ошибки о некорректном пароле
-# XPATH = ".//p[text()='Некорректный пароль']"
 
 
 # 3. Личный кабинет

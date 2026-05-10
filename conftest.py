@@ -3,77 +3,11 @@
 # импорт библиотек (модулей)
 import pytest
 
-import random
+from selenium import webdriver
 
-# функция генерации случайных данных
-
-def random_element(max_chars):
-    letters = 'abcdefghijklmnopqrstuvwxyz_0123456789'
-    random_element = ''
-    for _ in range(max_chars):
-        random_element += random.choice(letters)
-    return random_element
-
-# фикстуры для URL
-
-@pytest.fixture(scope='function')
-def main_page():
-    return "https://stellarburgers.education-services.ru/"
-
-@pytest.fixture(scope='function')
-def login_page():
-    return "https://stellarburgers.education-services.ru/login"
-
-@pytest.fixture(scope='function')
-def register_page():
-    return "https://stellarburgers.education-services.ru/register"
-
-@pytest.fixture(scope='function')
-def forgot_password_page():
-    return "https://stellarburgers.education-services.ru/forgot-password"
-
-@pytest.fixture(scope='function')
-def personal_account_page():
-    return "https://stellarburgers.education-services.ru/account/profile"
-
-
-# фикстуры для логина, пароля, email
-
-# фиксированные логин, пароль, email
-
-@pytest.fixture(scope='function')
-def login_fix():
-    login_fix = "minakova_46fs"
-    return login_fix
-
-@pytest.fixture(scope='function')
-def password_fix():
-    password_fix = "123456poiuyt"
-    return password_fix
-
-@pytest.fixture(scope='function')
-def email_fix():
-    email_fix = "minakova_46fs-cohort@ya.ru"
-    return email_fix
-
-# случайные логин, пароль, email, созданные с помощью функции генерации случайных данных
-
-@pytest.fixture(scope='function')
-def login_random():
-    login_random = random_element(5)
-    return login_random
-
-@pytest.fixture(scope='function')
-def password_random():
-    password_random = random_element(6)
-    return password_random
-
-@pytest.fixture(scope='function')
-def email_random():
-    email_random = random_element(5) + '@ya.ru'
-    return email_random
-
-@pytest.fixture(scope='function')
-def password_random_falue():
-    password_random_falue = random_element(5)
-    return password_random_falue
+# старт и завершение работы браузера
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()

@@ -1,36 +1,37 @@
-from selenium.webdriver.common.by import By
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from locators import ProfilePageLocators
+from locators import LoginPageLocators
+from locators import MainPageLocators
+from helpers import (
+    LOGIN_PAGE, 
+    PASSWORD_FIX,
+    EMAIL_FIX
+)
 
-def test_registration_success(login_page, email_fix, password_fix):
-    driver = webdriver.Chrome()
+def test_logout_success(browser):
 
-    try:
-        driver.get(login_page)
+    browser.get(LOGIN_PAGE)
 
 # явное ожидание для загрузки страницы
-        WebDriverWait(driver, 10)
+    WebDriverWait(browser, 10)
 
 # Авторизация
-        driver.find_element(By.XPATH, ".//input[@name='name']").send_keys(email_fix)
-        driver.find_element(By.XPATH, ".//input[@name='Пароль']").send_keys(password_fix)
-        driver.find_element(By.XPATH, ".//button[text()='Войти']").click()
+    browser.find_element(*LoginPageLocators.USEREMAIL_FIELD).send_keys(EMAIL_FIX)
+    browser.find_element(*LoginPageLocators.USERPASSWORD_FIELD).send_keys(PASSWORD_FIX)
+    browser.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
 # явное ожидание для загрузки страницы
-        WebDriverWait(driver, 10)
+    WebDriverWait(browser, 10)
 
-# клик по кнопке
-        driver.find_element(By.XPATH, ".//p[text()='Личный Кабинет']").click()
+# клик по кнопке "Личный Кабинет"
+    browser.find_element(*MainPageLocators.GOTO_PROFILE_BUTTON).click()
 
 # явное ожидание для загрузки страницы
-        WebDriverWait(driver, 10)
-
-# клик по кнопке
-        driver.find_element(By.XPATH, ".//div/nav/ul/li[3]/button").click()
+    WebDriverWait(browser, 10)
+        
+# клик по кнопке "Выход"
+    browser.find_element(*ProfilePageLocators.EXIT_BUTTON).click()
 
 # есть заголовок "Вход"
-        assert expected_conditions.visibility_of_element_located((By.XPATH, ".//div/h2[text()='Вход']"))
-
-    finally:
-        driver.quit()
+    assert expected_conditions.visibility_of_element_located(LoginPageLocators.ENTRANCE_HEADER)
