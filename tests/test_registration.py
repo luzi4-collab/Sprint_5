@@ -2,13 +2,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import RegistrationPageLocators
 from locators import LoginPageLocators
-from helpers import (
-    REGISTER_PAGE, 
+from helpers import ( 
     generate_login_random, 
     generate_email_random, 
     generate_password_random, 
     generate_password_random_falue
 )
+from constants import REGISTER_PAGE
 
 def test_registration_success(browser):
     login_random = generate_login_random()

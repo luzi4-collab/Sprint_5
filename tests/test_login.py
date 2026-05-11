@@ -4,7 +4,7 @@ from locators import LoginPageLocators
 from locators import MainPageLocators
 from locators import RegistrationPageLocators
 from locators import ForgotPasswordPageLocators
-from helpers import (
+from constants import (
     MAIN_PAGE,
     REGISTER_PAGE,
     FORGOT_PASSPORT_PAGE,

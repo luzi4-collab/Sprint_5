@@ -7,6 +7,7 @@
 # все тесты и файлы с локаторами и хелперами размещены в каталоге tests, список тестов по файлам:
 # locators.py - файл с локаторами
 # helpers.py - файл с хелперами
+# constants.py - файл с хелперами
 
 # тесты сгруппированы в файлы:
 
@@ -22,7 +23,7 @@
 # test_login_from_forgot_password_form_success - вход по кнопке с формы восстановления пароля
 # test_login_by_personal_account_button_success - вход по кнопке "Личный кабинет"
 
-# test_click_on.py
+# test_click_on_buttons.py
 # содержит тесты:
 # test_click_on_button_personal_account_logouted_success - переход по клику на "Личный кабинет", незалогиненный пользователь
 # test_click_on_button_personal_account_logined_success - переход по клику на "Личный кабинет", залогиненный пользователь

@@ -2,7 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators import LoginPageLocators
 from locators import MainPageLocators
 from locators import ProfilePageLocators
-from helpers import (
+from constants import (
     MAIN_PAGE,
     LOGIN_PAGE, 
     PASSWORD_FIX,

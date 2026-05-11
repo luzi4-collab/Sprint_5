@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions
 from locators import ProfilePageLocators
 from locators import LoginPageLocators
 from locators import MainPageLocators
-from helpers import (
+from constants import (
     LOGIN_PAGE, 
     PASSWORD_FIX,
     EMAIL_FIX
